@@ -34,7 +34,7 @@ console.log(result);
                                  
   
                      
- iframe.src =`https://comsklivetv-cloud.github.io/star-/name.html${result}_BTS&keyId=${key1}&key=${key2}`;
+ iframe.src =`https://comsklivetv-cloud.github.io/APPTV/jiohd?id=${result}_BTS&keyId=${key1}&key=${key2}`;
                     } 
                 });
         });
