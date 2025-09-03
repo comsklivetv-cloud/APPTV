@@ -18,7 +18,7 @@
             
             if (!streamId) return;
             
-            fetch('https://tvgo.neocities.org/Json/jiohd.txt')
+            fetch('https://comsklivetv-cloud.github.io/Json/jiohd.txt')
                 .then(response => response.json())
                 .then(data => {
                     const streamInfo = data.find(item => item.id === streamId);
