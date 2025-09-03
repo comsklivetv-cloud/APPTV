@@ -1,0 +1,66 @@
+
+
+
+
+
+
+
+
+
+
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title> JIOSTAR </title> 
+  <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const streamId = urlParams.get('id');
+            
+            if (!streamId) return;
+            
+            fetch('https://tvgo.neocities.org/Json/jiohd.txt')
+                .then(response => response.json())
+                .then(data => {
+                    const streamInfo = data.find(item => item.id === streamId);
+                    const iframe = document.getElementById('stream-iframe');
+                    if (streamInfo.keyId && streamInfo.key) {
+                    const key= encodeURIComponent(streamInfo.name);
+                      const key1= encodeURIComponent(streamInfo.keyId);                             
+const key2= encodeURIComponent(streamInfo.key);  
+                let str = streamInfo.name;
+let result = str.split(" ").map(word => word.replace(" ", "_")).join("_");
+console.log(result);
+                                               
+                                 
+  
+                     
+ iframe.src =`https://comsklivetv-cloud.github.io/star-/name=${result}_BTS&keyId=${key1}&key=${key2}`;
+                    } 
+                });
+        });
+    </script> 
+ </head> 
+ <body style="position:absolute; margin: 0; padding: 0; height: 100%; width: 100%; background: #000;">
+  <style>
+    /* CSS to rotate the iframe to a portrait orientation */
+    #stream-iframe {
+      /* Flip the width and height for the rotation */
+      width: 100vh;
+      height: 100vw;
+      /* Rotate the iframe 90 degrees and reposition it */
+      transform: translateY(100%) rotate(-90deg);
+      transform-origin: top left;
+      /* Ensure the iframe fills the container after rotation */
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: none;
+    }
+  </style>
+  <iframe id="stream-iframe" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+</body>
+</html>
+
+
+
+
